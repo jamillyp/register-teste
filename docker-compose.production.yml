@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  web:
+    image: massiva
+    build: .
+    tty: true
+    stdin_open: true
+    ports:
+      - "10009:3000"
+    labels:
+      - "traefik.backend=massiva.mobtelecom.com.br"
+      - "traefik.frontend.rule=Host:massiva.mobtelecom.com.br"
+      - "traefik.docker.network=traefik_web"
+      - "traefik.port=3000"
+    networks:
+      - traefik_web
+    deploy:
+      update_config:
+        parallelism: 1
+        delay: 2s
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [ node.role == manager ]
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+
+networks:
+  traefik_web:
+    external: true

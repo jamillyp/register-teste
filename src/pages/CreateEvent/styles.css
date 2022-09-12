@@ -1,0 +1,36 @@
+.container-create-event {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.content-create-event {
+    display: flex;
+    flex-direction: column;
+}
+
+#create-event-back :hover {
+    filter: brightness(0.9);
+}
+
+#create-event-back button {
+    width: 100px;
+    height: 35px;
+    background: #F5F5FA;
+    box-shadow: 0px 3.50209px 3.50209px rgba(0, 0, 0, 0.1);
+    border-radius: 8.75522px;
+    font-size: small;
+    text-align: center;
+    color:#A80004;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#create-event-back {
+    margin: 20px 10%;
+}
+
+.create-event-time-content {
+    width: 50%;
+}

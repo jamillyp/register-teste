@@ -1,0 +1,108 @@
+.container-communication {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.content-communication {
+    margin-top: 30px;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-communication {
+    display: flex;
+}
+
+.subtitle-communication {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subtitle-communication span{
+    display: inline-flex;
+    align-items: center;
+    font-size: small;
+}
+
+.subtitle-communication h3 {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.subtitle-communication select{
+    width: 224px;
+    height: 30px;
+    border: 1.25px solid #A29F9B;
+    border-radius: 6.25px;
+    font-size: small;
+}
+
+.table-body-communication{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.table-body-communication{
+    margin-top: 30px;
+}
+
+.table-body-communication table {
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.table-body-communication thead {
+    background-color: #C00E0E;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    height: 40px;
+
+}
+
+.table-body-communication tbody {
+    text-align: center;
+    border-bottom: 1px solid #A19F9B;
+    font-size: 13px;
+    height: 40px;
+}
+
+.table-body-communication td, th {
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table-body-communication img {
+    cursor: pointer;
+    width: 19px;
+}
+
+.navbar-light .navbar-toggler {
+    width: auto;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.navbar-light .navbar-toggler img {
+    margin-right: 5px;
+}
+
+.pagination-communication {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

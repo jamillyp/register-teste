@@ -1,0 +1,45 @@
+stages:
+  - build
+  - deploy
+
+build_staging:
+  stage: build
+  tags:
+    - moi-vlcedkr-01
+  script:
+    - cp /var/www/html/massiva/homo/.env ./
+    - docker-compose -f docker-compose.staging.yml build
+  only:
+    - /^release.*$/
+
+build_prod:
+  stage: build
+  tags:
+    - moi-vlcedkr-01
+  script:
+    - cp /var/www/html/massiva/prod/.env ./
+    - docker-compose -f docker-compose.production.yml build
+  only:
+    - master
+
+deploy_staging:
+  stage: deploy
+  tags:
+    - moi-vlcedkr-01
+  script:
+    - docker stack deploy -c docker-compose.staging.yml massivastaging
+  after_script:
+    - docker service update massivastaging_web
+  only:
+    - /^release.*$/
+
+deploy_production:
+  stage: deploy
+  tags:
+    - moi-vlcedkr-01
+  script:
+    - docker stack deploy -c docker-compose.production.yml massivaproduction
+  after_script:
+    - docker service update massivaproduction_web
+  only:
+    - master

@@ -1,0 +1,13 @@
+.container-edit-event {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.content-edit-event {
+    margin-top: 50px;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
